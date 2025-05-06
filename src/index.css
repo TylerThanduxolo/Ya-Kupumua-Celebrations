@@ -1,0 +1,84 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8B5A2B;
+  --color-secondary: #D4A76A;
+  --color-accent: #FFD700;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-playfair font-bold text-primary mb-8 text-center;
+}
+
+.section-subtitle {
+  @apply text-xl text-secondary mb-12 text-center max-w-2xl mx-auto;
+}
+
+.nav-shrink {
+  @apply transition-all duration-300;
+}
+
+.nav-shrink.scrolled {
+  @apply py-2;
+}
+
+.nav-shrink.scrolled img {
+  @apply h-12;
+}
+
+.service-card {
+  @apply bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105;
+}
+
+.equipment-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.equipment-card img {
+  @apply w-full h-64 object-cover transition-transform duration-300;
+}
+
+.equipment-card:hover img {
+  @apply scale-110;
+}
+
+.equipment-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity;
+}
+
+.equipment-card:hover .equipment-overlay {
+  @apply opacity-100;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+}
